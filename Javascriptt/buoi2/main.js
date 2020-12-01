@@ -181,10 +181,10 @@ const comments = [
 
 function flattenComments(comments) {
   const flattenedComments = comments.reduce((accumulator, currentVal) => {
-    if (typeof currentVal.body == "string") {
-      accumulator.push(currentVal.body);
-    }
-    if (typeof currentVal.child == "object" && currentVal.child.length > 0) {
+    
+    accumulator.push(currentVal.body);
+
+    if (currentVal.child.length > 0) {
       accumulator = accumulator.concat(flattenComments(currentVal.child));
     }
     return accumulator;
