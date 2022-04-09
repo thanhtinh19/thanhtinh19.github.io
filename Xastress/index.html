@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hit Cheems</title>
+<link rel="icon" href="cheems.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+    }
+    @media (max-width: 360px){
+        body{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+</style>
+</head>
+<body>
+<script type="text/javascript">
+  function changeImage() {
+    element=document.getElementById('example');
+    element.src="hitcheems2.png";
+    var audio = new Audio('dam.mp3');
+    audio.play();
+    setTimeout(return_2, 100)
+}
+  function return_2() {
+    element=document.getElementById('example');
+    element.src="hitcheems.png";
+}
+</script>
+  <div><img id="example" onclick="changeImage()" src="hitcheems.png">
+    <p>
+      <details>
+      <summary>Please, Cheems need u read this =((</summary>
+      <p>Please, don't hit me! It's hurt!</p>
+      <p>Crying :'(</p>
+    </details>
+</div>
+</body>
+<audio src="dam.mp3" autoplay></audio>
+</html>

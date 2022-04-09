@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* body {
+    height: 100000px;
+} */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 35px;
+    align-items: center;
+}
+
+header .text1 {
+    display: flex;
+    font-size: 35px;
+}
+
+.com {
+    color: #725494;
+}
+
+.ahihi:hover {
+    color: #725494;
+}
+
+header .text2 {
+    font-size: 23px;
+}
+
+.menu {
+    background-color: #725494;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -35px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.menu_item {
+    padding: 10px 20px;
+    color: white;
+    position: relative;
+}
+
+.menu_item:hover {
+    background-color: #492C6F;
+    cursor: pointer;
+}
+
+.menu_cap2 {
+    position: absolute;
+    display: none;
+}
+
+.menu_item_2 {
+    background-color: #725494;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.menu_item_2:hover {
+    background-color: #D2691E;
+}
+
+.menu_item:hover .menu_cap2 {
+    display: block;
+    width: 100%;
+    left: 0;
+    top: 100%;
+}
+
+.menu_cap3 {
+    position: absolute;
+    display: none;
+}
+
+.menu_item_3 {
+    background-color: #725494;
+    color: white;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.menu_item_3:hover {
+    background-color: #492C6F;
+}
+
+.menu_item_2:hover .menu_cap3 {
+    display: block;
+    width: 100%;
+    left: 100%;
+    top: 50%;
+}
+
+.content1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    color: #492C6F;
+    margin-top: -100px;
+}
+
+.content1 img {
+    width: 52%;
+}
+
+.content1 h1 {
+    font-size: 60px;
+}
+
+.content1 h4 {
+    font-size: 23px;
+}
+
+.seemore {
+    padding: 10px 20px;
+    background-color: #190B2F;
+    color: white;
+    width: 100px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.seemore i {
+    font-size: 15px;
+}
+
+.seemore:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.gif {
+    position: absolute;
+    top: 70px;
+    z-index: -1;
+    width: 20%;
+    left: 20%;
+}
+
+.content2 {
+    margin-top: -100px;
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+img {
+    width: 45%;
+}
+
+.text {
+    width: 40%;
+    padding: 10px 35px;
+}
+
+.text p {
+    font-size: 23 px;
+}
+
+.profile span {
+    color: white;
+    background-color: #D2691E;
+    position: absolute;
+    padding: 5px 10px;
+    font-size: 23px;
+}
+
+.sale90 {
+    top: 20px;
+    left: 39%;
+}
+
+.sale50 {
+    top: 20px;
+    right: 7%;
+}
+
+footer {
+    background-color: #50198f;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 40px;
+    margin-top: 70px;
+}
