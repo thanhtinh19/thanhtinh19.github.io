@@ -1,5 +1,4 @@
-
- /*
+/*
 1.Render song
 2.Scroll top
 3.Play, pause,seek
@@ -16,7 +15,16 @@ const $$ = document.querySelectorAll.bind(document);
 
 const playlist = $(".playlist");
 
+const cd = $(".cd");
+const heading = $("header h2");
+const cdThumb = $(".cd-thumb");
+const audio = $("#audio");
+const playBtn = $(".btn-toggle-play");
+const player = $(".player");
+
 const app = {
+  currentIndex: 0,
+  isPlaying: false,
   songs: [
     {
       name: "Ai chung tình được mãi",
@@ -85,21 +93,56 @@ const app = {
     });
     $(".playlist").innerHTML = htmls.join("");
   },
+  defineProperties: function () {
+    Object.defineProperty(this, "currentSong", {
+      get: () => {
+        return this.songs[this.currentIndex];
+      },
+    });
+  },
   handleEvents: function () {
-    const cd = $(".cd");
+    const _this = this;
     const cdWidth = cd.offsetWidth;
+    //xử lý phóng to/thu nhỏ cd
     document.onscroll = function () {
-      const scrollTop =
-        window.scrollY || document.documentElement.scrollTop;
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
       const newCdWidth = cdWidth - scrollTop;
       cd.style.width = newCdWidth > 0 ? newCdWidth + "px" : 0;
       console.log(newCdWidth);
       cd.style.opacity = newCdWidth / cdWidth;
     };
+
+    //click play
+    playBtn.onclick = function () {
+      if (_this.isPlaying) {
+        _this.isPlaying = false;
+        audio.pause();
+        player.classList.remove("playing");
+      } else {
+        _this.isPlaying = true;
+        audio.play();
+        player.classList.add("playing");
+      }
+    };
+  },
+  loadCurrentSong: function () {
+    heading.textContent = this.currentSong.name;
+    cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
+    audio.src = this.currentSong.path;
+
+    console.log();
   },
   start: function () {
+    //Định nghĩa các thuộc tính cho object
+    this.defineProperties();
+
+    //lắng nghe xử lý các sự kiện
     this.handleEvents();
 
+    //tải thông tin bài hát đầu tiên khi chạy
+    this.loadCurrentSong();
+
+    //render playlist
     this.render();
   },
 };
